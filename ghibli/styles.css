@@ -1,0 +1,178 @@
+:root {
+    --primary-color: #12161E;
+    --font-color: #f2f2f2;
+}
+
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html{
+    background-color: var(--primary-color);
+}
+
+hr{
+    width: 50%;
+    border: 2px solid #f2f2f2;
+    border-radius: 40px;
+    overflow: visible;
+    text-align: center;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+h1{
+    color: var(--primary-color);
+    font-size: 2.5vw;
+}
+
+.header{
+    text-align: center;
+    display: grid;
+    grid-template: repeat(2,1fr);
+    align-items: center;
+}
+.header h1{
+    text-align: left;
+    grid-column: 2;
+    grid-row: 1;
+    justify-content: center;
+}
+
+#backHome-button{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    font-size: 35px;
+    grid-column: 1;
+    grid-row: 1;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: all 0.3s;
+}
+#backHome-button:hover{
+    background-color: rgb(238, 238, 238);
+}
+
+.main{
+    background-color: var(--font-color);
+    margin: auto;
+    margin-top: 4vh;
+    width: 85vw;
+    height: 100vh;
+    border-radius: 20px;
+    padding: 5vw;
+    padding-bottom: 20vh;
+}
+
+.carrousel{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 90%;
+    margin: auto;
+    padding: 3vw;
+    border-radius: 20px;
+    border: 1px solid lightgrey;
+}
+
+.carrousel-case{
+    width: 100%;
+    display: flex;
+}
+.carrousel-case p{
+    font-weight: 600;
+}
+.carrousel-case hr{
+    width: 20%;
+    border: 1px solid var(--primary-color);
+    border-radius: 40px;
+    overflow: visible;
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+.carrousel-case img{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    width: 30%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.carrousel-case-content{
+    padding: 1.5vw;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.carrousel-next, .carrousel-back{
+    font-size: 50px;
+    font-weight: bold;
+    margin: auto 0 auto;
+}
+.carrousel-next-button, .carrousel-back-button{
+    border-radius: 50px;
+    padding: 8px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.2s;
+    color: var(--primary-color);
+}
+.carrousel-next-button:hover, .carrousel-back-button:hover{
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+.carrousel-back{
+    margin-right: 2vw;
+}
+
+.carrousel-case-content-sup{
+    padding: 1vw;
+    display: grid;
+    grid-template-columns: repeat(2,3fr);
+    text-align: left;
+}
+
+
+.find-ghibli{
+    margin: auto;
+    width: fit-content;
+    text-align: center;
+    margin-top: 10vh;
+}
+.find-ghibli button{
+    padding: 15px 35px 15px 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 21px;
+    font-weight: 600;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: all 0.3s;
+}
+.find-ghibli button::after{
+    content: '➡';
+    opacity: 0;  
+    transition: 0.4s;
+    position: relative;
+    right: -30px;
+}
+.find-ghibli button:hover:after {
+    opacity: 1;
+    right: -10px;
+  }
+.find-ghibli button:hover{
+    background-color: rgb(238, 238, 238);
+}
+
+
+.footer{
+    margin-top: 7vh;
+}
+#Copyright{
+    text-align: center;
+    color: var(--font-color);
+    font-weight: 600;
+}

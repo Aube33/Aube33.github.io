@@ -76,6 +76,7 @@ h1{
     transition-duration: 0.2s;
     flex: 0 0 auto;
     margin: 0 2vw 0;
+    cursor: pointer;
 }
 .home_projects-case:hover{
     transform: scale(1.05);
@@ -95,7 +96,6 @@ h1{
     object-fit: cover;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    cursor: pointer;
 }
 .home_projects-case p{
     padding: 1vw;
