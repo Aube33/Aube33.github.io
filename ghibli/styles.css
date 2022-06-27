@@ -140,6 +140,7 @@ h1{
     width: fit-content;
     text-align: center;
     margin-top: 10vh;
+    margin-bottom: 5vh;
 }
 .find-ghibli button{
     padding: 15px 35px 15px 50px;
