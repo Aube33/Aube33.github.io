@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'ZeldaFont';
+    src: url('../../font/policezelda.otf'); 
+}
+
+*{
+    font-family: ZeldaFont;
+    margin: 0;
+}
+
+/*= Scrollbar =*/
+::-webkit-scrollbar {
+    display: none;
+}
+::-webkit-scrollbar-track {
+    display: none;
+}
+::-webkit-scrollbar-thumb {
+    display: none;
+}
+::-webkit-scrollbar-thumb:hover {
+    display: none;
+}
+::-webkit-scrollbar-corner {
+    display: none;
+}
+
+
+body{
+    background: black;
+    cursor: pointer;
+}
+
+#header{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+}
+#header h1{
+    color: white;
+    font-size: 80px;
+}
+
+.links{
+    filter: contrast();
+    position: relative;
+    top: 130px;
+    opacity: 0;
+}
+
+.piste_dance{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.piste_dance #boule-disco{
+    position: relative;
+    top: -150vh;
+}
+
+#sol-disco{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+
+    position: relative;
+    top: -300px;
+    
+    transform: rotate3d(6, 1, 1, -75deg);
+}
+
+
+#rideau{
+    top : 0px;
+    left : 0px;
+    z-index: 99999;
+    position : fixed;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+}

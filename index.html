@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>Diskoteque</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<img id="rideau" src="img/rideau.jpg">
+
+	<div id="header">
+		<h1>Diskoteque d'Hyrule</h1>
+	</div>
+
+	<div class="piste_dance">
+		<img class="links" src="./img/zelda.gif">
+
+		<img id="boule-disco" src="./img/disco.gif">
+
+		<img class="links" src="./img/zelda.gif" style="top: 160px;">
+	</div>
+	<div id="sol-disco">
+		<img src="./img/damier.jpg">
+	</div>
+
+
+
+	<script>
+		const bouleDisco=document.getElementById("boule-disco");
+		const danceurs=document.getElementsByClassName("links");3
+		const header=document.getElementById("header");
+
+		var audioRideau = new Audio('./musics/bruit.mp3');
+		audioRideau.volume = 0.2;
+
+		function fadeIn(el, time) {
+			el.style.opacity = 0;
+
+			var last = +new Date();
+			var tick = function() {
+				el.style.opacity = +el.style.opacity + (new Date() - last) / time;
+				last = +new Date();
+
+				if (+el.style.opacity < 1) {
+				(window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+				}
+			};
+
+			tick();
+		}
+
+		function playMusic(){
+			var audio = new Audio('./musics/stayin-alive.mp3');
+			audio.volume = 0.2;
+			audio.play();
+		}
+
+		function BouleGoDOwn(){
+			var sUsrAg = navigator.userAgent;
+			let id = null;
+			let pos = -window.screen.height+600;
+			clearInterval(id);
+			id = setInterval(frame, 0);
+			function frame() {
+				if (pos >= 0) {
+					clearInterval(id);
+					audioRideau.pause();
+					playMusic();
+					fadeIn(header, 1000)
+
+					setTimeout(function() {
+						fadeIn(danceurs[0], 200)
+					}, 1500);
+					setTimeout(function() {
+						fadeIn(danceurs[1], 200);
+						document.body.style.cursor="default";
+					}, 10600);
+					setTimeout(function() {
+						document.body.style.background = "url('./img/background.gif')";
+					}, 14700);
+				} else {
+					if(sUsrAg.includes("Firefox")){
+						pos+=2;
+					}
+					else{
+						pos++;
+					}
+					bouleDisco.style.top = pos + 'px';
+				}
+			}
+		}
+
+		const rideau=document.getElementById("rideau");
+		var rideauClicked=false;
+		rideau.addEventListener('click', function(){
+			if(rideauClicked){
+
+			}
+			else{
+				var sUsrAg = navigator.userAgent;
+				rideauClicked=true;
+				document.body.style.cursor="wait";
+				audioRideau.play();
+				let id = null;
+				let pos = 0;
+				clearInterval(id);
+				id = setInterval(frame, 0);
+				function frame() {
+					if (pos <= -window.screen.height-100) {
+						clearInterval(id);
+						rideau.remove();
+						BouleGoDOwn();
+					} else {
+						if(sUsrAg.includes("Firefox")){
+						pos-=2;
+						}
+						else{
+							pos--;
+						}
+						rideau.style.top = pos + 'px';
+					}
+				}
+			}
+		}, false);
+
+	</script>
+</body>
+</html>
