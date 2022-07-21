@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'ZeldaFont';
-    src: url('../../font/policezelda.otf'); 
+    src: url('./font/policezelda.otf'); 
 }
 
 *{
